@@ -1,0 +1,20 @@
+<div class="container paisTable">
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th>Bandera</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pais of paises">
+      <td scope="row">{{ pais.name }}</td>
+      <td scope="row">
+        <a [routerLink]="['/paises', pais.name]" [queryParams]="{pais: pais}">
+          <img [src]="pais.flag" width="70" alt="">
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
