@@ -17,6 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaisListadoComponent } from './components/paises/pais-listado/pais-listado.component';
 import { PaisDetalleComponent } from './components/paises/pais-detalle/pais-detalle.component';
 import { ActorService } from './components/actores/actor.service';
+import { TablaPeliculaComponent } from './components/peliculas/tabla-pelicula/tabla-pelicula.component';
+import { PeliculaDetalleComponent } from './components/peliculas/pelicula-detalle/pelicula-detalle.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +29,12 @@ import { ActorService } from './components/actores/actor.service';
     PeliculaAltaComponent,
     ActorAltaComponent,
     ActorListadoComponent,
+    TablaPeliculaComponent,
     PeliculaListadoComponent,
+    PeliculaDetalleComponent,
     BienvenidaComponent,
     PaisListadoComponent,
-    PaisDetalleComponent
+    PaisDetalleComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,7 @@ import { ActorService } from './components/actores/actor.service';
     FormsModule,
     ReactiveFormsModule
   ],
+
   providers: [PeliculaService, ActorService],
   bootstrap: [AppComponent]
 })

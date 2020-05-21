@@ -1,0 +1,2 @@
+<app-pelicula-listado *ngIf="!pelicula"  (showDetail)="onDetail($event)"></app-pelicula-listado>
+<app-pelicula-detalle *ngIf="pelicula" [pelicula]="pelicula" (peliculaDelete)="onDelete($event)" (back)="onBack()"></app-pelicula-detalle>

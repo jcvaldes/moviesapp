@@ -8,15 +8,22 @@ export class PeliculaService {
   }
   getPeliculas() {
     debugger
-    return JSON.parse(localStorage.getItem('peliculas'));
+    return JSON.parse(localStorage.getItem('peliculas')) || [];
   }
 
   altaPelicula(pelicula: Pelicula) {
-   debugger
     let peliculas: Pelicula[] = JSON.parse(localStorage.getItem('peliculas'));
     pelicula.id = this.genId(peliculas);
     peliculas.push(pelicula);
     localStorage.setItem('peliculas', JSON.stringify(peliculas));
+  }
+  deletePelicula(pelicula: Pelicula) {
+    const peliculas: Pelicula[] = this.getPeliculas();
+    const peliculasFiltered = peliculas.filter(el => {
+      return el.id !== pelicula.id;
+    });
+    localStorage.setItem('peliculas', JSON.stringify(peliculasFiltered));
+
   }
   private genId(peliculas: Pelicula[]) {
     return peliculas.length + 1;

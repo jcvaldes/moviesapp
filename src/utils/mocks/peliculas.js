@@ -1,33 +1,33 @@
 const peliculasMock = [{
     id: 1,
     nombre: "Rapido y Furiosos",
-    tipo: "otros", 
+    tipo: "otros",
     fechaEstreno: "2000-12-03",
     cantidadPublico: 300000,
-    fotoPelicula: "rapido-y-furioso.jpg",
+    fotoPelicula: "https://static.misionesonline.news/wp-content/uploads/2020/03/16084200/rapidos-y-furiosos-9-coronavirus.jpeg",
     actores: [{
-        id: 3, 
-        nombre: "Oscar", 
-        apellido: "Perez", 
-        sexo: "Masculino", 
-        fechaNacimiento: "04/06/2000", 
-        foto: "rapido-y-furioso.jpg"
+        id: 3,
+        nombre: "Vin Disel",
+        apellido: "Perez",
+        sexo: "Masculino",
+        fechaNacimiento: "04/06/2000",
+        foto: "https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2020/03/12164026/Vin_Diesel_Countdown_Rep2.jpg"
       }
     ]
 }, {
   id: 2,
   nombre: "DeadPool",
   tipo: "comedia",
-  fechaEstreno: "2010-12-11", 
-  cantidadPublico: 560000, 
-  fotoPelicula: "deadpool.jpg", 
-  actores: [{ 
-    id: 1, 
-    nombre: "Luis", 
-    apellido: "Martinez", 
-    sexo: "Masculino", 
-    fechaNacimiento: "22/02/1996", 
-    foto: "batman.jpg"
+  fechaEstreno: "2010-12-11",
+  cantidadPublico: 560000,
+  fotoPelicula: "https://m.media-amazon.com/images/M/MV5BYzE5MjY1ZDgtMTkyNC00MTMyLThhMjAtZGI5OTE1NzFlZGJjXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+  actores: [{
+    id: 1,
+    nombre: "Ryan",
+    apellido: "Reinolds",
+    sexo: "Masculino",
+    fechaNacimiento: "22/02/1996",
+    foto: "https://upload.wikimedia.org/wikipedia/commons/1/14/Deadpool_2_Japan_Premiere_Red_Carpet_Ryan_Reynolds_%28cropped%29.jpg"
     }]
   }
 ]
