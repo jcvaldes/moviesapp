@@ -17,10 +17,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaisListadoComponent } from './components/paises/pais-listado/pais-listado.component';
 import { PaisDetalleComponent } from './components/paises/pais-detalle/pais-detalle.component';
 import { ActorService } from './components/actores/actor.service';
-import { TablaPeliculaComponent } from './components/peliculas/tabla-pelicula/tabla-pelicula.component';
+import { PeliculaTablaComponent } from './components/peliculas/pelicula-tabla/pelicula-tabla.component';
 import { PeliculaDetalleComponent } from './components/peliculas/pelicula-detalle/pelicula-detalle.component';
 import { FilterPipe } from './common/pipes/filter';
-import { TablaPaisesComponent } from './components/paises/tabla-paises/tabla-paises.component';
+import { PaisesTablaComponent } from './components/paises/paises-tabla/paises-tabla.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +31,11 @@ import { TablaPaisesComponent } from './components/paises/tabla-paises/tabla-pai
     PeliculaAltaComponent,
     ActorAltaComponent,
     ActorListadoComponent,
-    TablaPeliculaComponent,
+    PeliculaTablaComponent,
     PeliculaListadoComponent,
     PeliculaDetalleComponent,
     BienvenidaComponent,
-    TablaPaisesComponent,
+    PaisesTablaComponent,
     PaisListadoComponent,
     PaisDetalleComponent,
     FilterPipe

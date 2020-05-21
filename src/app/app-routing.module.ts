@@ -8,9 +8,6 @@ import { ActorAltaComponent } from './components/actores/actor-alta/actor-alta.c
 import { ActorListadoComponent } from './components/actores/actor-listado/actor-listado.component';
 import { PaisListadoComponent } from './components/paises/pais-listado/pais-listado.component';
 import { PaisDetalleComponent } from './components/paises/pais-detalle/pais-detalle.component';
-import { TablaPeliculaComponent } from './components/peliculas/tabla-pelicula/tabla-pelicula.component';
-import { TablaPaisesComponent } from './components/paises/tabla-paises/tabla-paises.component';
-
 
 const routes: Routes = [
   { path: 'bienvenido', component: BienvenidaComponent },
@@ -19,7 +16,7 @@ const routes: Routes = [
     path: 'peliculas',
     children: [
       { path: 'alta', component: PeliculaAltaComponent },
-      { path: 'listado', component: TablaPeliculaComponent },
+      { path: 'listado', component: PeliculaListadoComponent },
       { path: ':id', component: PeliculaAltaComponent },
     ]
   },

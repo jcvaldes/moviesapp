@@ -11,17 +11,18 @@ import { Pelicula } from '../pelicula.model';
 })
 export class PeliculaDetalleComponent {
   @Input() pelicula: Pelicula;
-  @Output() peliculaDelete: EventEmitter<Pelicula> = new EventEmitter<Pelicula>();
+  @Output() peliculaDeleted: EventEmitter<Pelicula> = new EventEmitter<Pelicula>();
   @Output() back: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
     public _peliculaService: PeliculaService) {}
 
-  onDelete() {
+  onDelete(oelicula) {
     this._peliculaService.deletePelicula(this.pelicula);
-    this.onBack();
+    this.peliculaDeleted.emit(this.pelicula);
+    this.onClose();
   }
-  onBack() {
+  onClose() {
     this.back.emit();
   }
 }

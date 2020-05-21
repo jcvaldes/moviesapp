@@ -1,12 +1,11 @@
 <div class="container paisTable">
   <div class="row">
     <div class="col-9">
-      <app-tabla-paises [paises]="paises" (paisSelected)="onSelected($event)"></app-tabla-paises>
+      <app-paises-tabla #paisTabla [paises]="paises" (paisSelected)="onSelected($event)"></app-paises-tabla>
     </div>
     <div class="col-3">
       <app-pais-detalle [pais]="pais" *ngIf="pais" (deactivated)="onDeactivated($event)" ></app-pais-detalle>
     </div>
   </div>
-
 </div>
 

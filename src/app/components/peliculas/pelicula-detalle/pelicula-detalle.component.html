@@ -1,45 +1,24 @@
-<div class="container register">
-  <div class="row">
-    <div class="col-md-3">
-      <img [src]="pelicula.fotoPelicula" alt="foto pelicula" />
-    </div>
-    <div class="col-md-9 register-right">
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <h3 class="register-heading">Detalle Pelicula #{{ pelicula.id }}</h3>
-          <form  >
-            <div class="row register-form">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Nombre</label>
-                  <span class="form-control">{{ pelicula.nombre }}</span>
-                </div>
-                <div class="form-group">
-                  <label>Cantidad Público</label>
-                  <span class="form-control">{{ pelicula.cantidadPublico }}</span>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Tipo</label>
-                  <span class="form-control">{{ pelicula.tipo }}</span>
-                </div>
-                <div class="form-group">
-                  <label>Fecha Estreno</label>
-                  <span class="form-control">{{ pelicula.fechaEstreno }}</span>
-                </div>
-
-                <button class="btn btn-danger btn-lg mr-3" (click)="onDelete()">Borrar</button>
-                <button class="btn btn-primary btn-lg" (click)="onBack()">Volver</button>
-
-              </div>
-            </div>
-          </form>
-        </div>
-
+<img [src]="pelicula.fotoPelicula" alt="foto pelicula" />
+<form>
+  <div class="row mt-3">
+    <div class="col-12">
+      <div class="form-group">
+        <label>Nombre</label>
+        <span class="form-control">{{ pelicula.nombre }}</span>
       </div>
+      <div class="form-group">
+        <label>Cantidad Público</label>
+        <span class="form-control">{{ pelicula.cantidadPublico }}</span>
+      </div>
+      <div class="form-group">
+        <label>Tipo</label>
+        <span class="form-control">{{ pelicula.tipo }}</span>
+      </div>
+      <div class="form-group">
+        <label>Fecha Estreno</label>
+        <span class="form-control">{{ pelicula.fechaEstreno }}</span>
+      </div>
+      <button class="btn btn-danger btn-lg mr-3" (click)="onDelete(pelicula)">Eliminar</button>
     </div>
   </div>
-
-</div>
-
+</form>

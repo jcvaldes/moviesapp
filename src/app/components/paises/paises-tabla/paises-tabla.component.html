@@ -9,14 +9,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let pais of paises | filter:searchTerm" (click)="onSelect(pais)">
+    <tr *ngFor="let pais of paises | filter:searchTerm:'name'" (click)="onSelect(pais)">
       <td scope="row">{{ pais.name }}</td>
       <td scope="row">{{ pais.subregion }}</td>
       <td scope="row">{{ pais.capital }}</td>
       <td scope="row">
-        <a [routerLink]="['/paises', pais.name]" [queryParams]="{pais: pais}">
           <img [src]="pais.flag" width="70" alt="">
-        </a>
       </td>
     </tr>
   </tbody>

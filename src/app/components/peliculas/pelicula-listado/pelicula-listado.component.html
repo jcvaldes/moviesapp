@@ -1,33 +1,10 @@
-<div class="container peliculasTable">
-    <button class="btn btn-primary btn-lg mb-4" routerLink="/peliculas/alta" role="button">Nueva Pelicula</button>
-    <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">nombre</th>
-        <th scope="col">tipo</th>
-        <th scope="col">fechaEstreno</th>
-        <th scope="col">cantidadPublico</th>
-        <th scope="col">fotoPelicula</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let pelicula of peliculas">
-        <th scope="row">{{ pelicula.id }}</th>
-        <td scope="row">{{ pelicula.nombre }}</td>
-        <td scope="row">{{ pelicula.tipo }}</td>
-        <td scope="row">{{ pelicula.fechaEstreno | date:'dd/MM/yyyy' }}</td>
-        <td scope="row">{{ pelicula.cantidadPublico }}</td>
-        <td scope="row">
-            <img width="50" [src]="pelicula.fotoPelicula" alt=""></td>
-        <td scope="row">
-          <div class="btn-group dropup floating-action-button">
-            <button type="button" class="btn btn-info btn-sm btn-raised" (click)="handleDetail(pelicula)">Detalle</button>
-        </div>
-        </td>
-      </tr>
+<div class="container paisTable">
+  <div class="row">
+    <app-pelicula-tabla #paisTabla [peliculas]="peliculas" (peliculaSelected)="onSelected($event)"></app-pelicula-tabla>
 
-    </tbody>
-  </table>
+    <app-pelicula-detalle *ngIf="pelicula" [pelicula]="pelicula" (peliculaDeleted)="onDeleted($event)"></app-pelicula-detalle>
+
+    <!-- <app-actor-listado *ngIf="pelicula"></app-actor-listado> -->
+  </div>
+
 </div>
