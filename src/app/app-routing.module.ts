@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';
-import { BusquedaComponent } from './components/busqueda/busqueda.component';
+import { BusquedaComponent } from './components/paises/busqueda/busqueda.component';
 import { PeliculaAltaComponent } from './components/peliculas/pelicula-alta/pelicula-alta.component';
 import { PeliculaListadoComponent } from './components/peliculas/pelicula-listado/pelicula-listado.component';
 import { ActorAltaComponent } from './components/actores/actor-alta/actor-alta.component';

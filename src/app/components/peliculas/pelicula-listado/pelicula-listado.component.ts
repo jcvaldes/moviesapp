@@ -16,7 +16,6 @@ export class PeliculaListadoComponent {
   @ViewChild(PeliculaTablaComponent, { static: true }) peliculaTabla: PeliculaTablaComponent;
   constructor() { }
   onSelected(pelicula: Pelicula) {
-    debugger
     this.pelicula = pelicula;
     this.actores = pelicula.actores;
   }
