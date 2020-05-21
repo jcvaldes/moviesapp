@@ -2,18 +2,18 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { PaisService } from '../pais.service';
 import { Pais } from '../pais.model';
 import * as _ from 'lodash';
-import { PaisesTablaComponent } from '../paises-tabla/paises-tabla.component';
+import { PaisTablaComponent } from '../pais-tabla/pais-tabla.component';
 
 @Component({
   selector: 'app-pais-listado',
   templateUrl: './pais-listado.component.html',
   styleUrls: ['./pais-listado.component.scss']
 })
-export class PaisListadoComponent {
+export class PaisListadoComponent{
   pais: Pais;
   paises: Pais[] = [];
   paisesDesactivados: string[] = [];
-  @ViewChild(PaisesTablaComponent, { static: true }) paisTabla: PaisesTablaComponent;
+  @ViewChild(PaisTablaComponent, { static: true }) paisTabla: PaisTablaComponent;
   url =  'https://restcountries.eu/rest/v2/region/americas';
   constructor(public _paisService: PaisService) { }
 

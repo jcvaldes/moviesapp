@@ -20,7 +20,7 @@ import { ActorService } from './components/actores/actor.service';
 import { PeliculaTablaComponent } from './components/peliculas/pelicula-tabla/pelicula-tabla.component';
 import { PeliculaDetalleComponent } from './components/peliculas/pelicula-detalle/pelicula-detalle.component';
 import { FilterPipe } from './common/pipes/filter';
-import { PaisesTablaComponent } from './components/paises/paises-tabla/paises-tabla.component';
+import { PaisTablaComponent } from './components/paises/pais-tabla/pais-tabla.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { PaisesTablaComponent } from './components/paises/paises-tabla/paises-ta
     PeliculaListadoComponent,
     PeliculaDetalleComponent,
     BienvenidaComponent,
-    PaisesTablaComponent,
+    PaisTablaComponent,
     PaisListadoComponent,
     PaisDetalleComponent,
     FilterPipe

@@ -4,11 +4,11 @@ import { Pais } from '../pais.model';
 import { Observable, Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-paises-tabla',
-  templateUrl: './paises-tabla.component.html',
-  styleUrls: ['./paises-tabla.component.scss']
+  selector: 'app-pais-tabla',
+  templateUrl: './pais-tabla.component.html',
+  styleUrls: ['./pais-tabla.component.scss']
 })
-export class PaisesTablaComponent implements OnInit {
+export class PaisTablaComponent implements OnInit {
   @Output() paisSelected: EventEmitter<Pais> = new EventEmitter<Pais>();
   @Input() paises: Pais[] = [];
   searchTerm: string;
