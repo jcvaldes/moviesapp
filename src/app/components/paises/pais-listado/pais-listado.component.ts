@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component,  ViewChild, Output, EventEmitter } from '@angular/core';
 import { PaisService } from '../pais.service';
 import { Pais } from '../pais.model';
 import * as _ from 'lodash';
@@ -11,6 +11,7 @@ import { PaisTablaComponent } from '../pais-tabla/pais-tabla.component';
 })
 export class PaisListadoComponent{
   pais: Pais;
+  @Output() paisSelected: EventEmitter<Pais> = new EventEmitter<Pais>();
   paises: Pais[] = [];
   paisesDesactivados: string[] = [];
   @ViewChild(PaisTablaComponent, { static: true }) paisTabla: PaisTablaComponent;
@@ -19,6 +20,7 @@ export class PaisListadoComponent{
 
   onSelected(pais: Pais) {
     this.pais = pais;
+    this.paisSelected.emit(pais);
   }
   onDeactivated(pais: Pais) {
     this.paises = this.paisTabla.paises;

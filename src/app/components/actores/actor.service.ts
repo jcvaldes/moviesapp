@@ -10,11 +10,18 @@ export class ActorService {
     return JSON.parse(localStorage.getItem('actores'));
   }
 
-  altaActor(pelicula: Actor) {
+  altaActor(actor: Actor) {
     let actores: Actor[] = JSON.parse(localStorage.getItem('actores'));
-    pelicula.id = this.genId(actores);
-    actores.push(pelicula);
+    actor.id = this.genId(actores);
+    actores.push(actor);
     localStorage.setItem('actores', JSON.stringify(actores));
+  }
+  deleteActor(actor: Actor) {
+    const actors: Actor[] = this.getActores();
+    const actorsFiltered = actors.filter(el => {
+      return el.id !== actor.id;
+    });
+    localStorage.setItem('actores', JSON.stringify(actorsFiltered));
   }
   private genId(actores: Actor[]) {
     return actores.length + 1;

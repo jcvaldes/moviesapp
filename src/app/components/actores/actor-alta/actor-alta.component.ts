@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Actor } from '../actor.model';
 import { ActorService } from '../actor.service';
 import Swal from 'sweetalert2';
+import { Pais } from '../../paises/pais.model';
 @Component({
   selector: 'app-actor-alta',
   templateUrl: './actor-alta.component.html',
@@ -17,6 +18,7 @@ export class ActorAltaComponent implements OnInit {
       sexo: new FormControl('M', Validators.required),
       fechaNacimiento: new FormControl(null, Validators.required),
       foto: new FormControl(null, Validators.required),
+      paisOrigen: new FormControl(null, Validators.required),
     });
   }
 
@@ -24,6 +26,7 @@ export class ActorAltaComponent implements OnInit {
   }
   onSubmit() {
     this._actorService.altaActor(this.createActor());
+    this.form.get('paisOrigen').setValue(null);
     this.form.reset();
     Swal.fire('Atención', 'La actor ha sido guardado', 'success');
   }
@@ -38,5 +41,8 @@ export class ActorAltaComponent implements OnInit {
       paisOrigen: this.form.value.paisOrigen,
     };
     return actor;
+  }
+  onSelected(pais: Pais) {
+    this.form.get('paisOrigen').setValue(pais.name);
   }
 }

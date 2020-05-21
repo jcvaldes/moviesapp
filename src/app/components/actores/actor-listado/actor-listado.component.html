@@ -1,26 +1,11 @@
-<div class="container paisTable">
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th>Foto</th>
-        <th scope="col">Nombre</th>
-        <th>Apellido</th>
-        <th>Sexo</th>
-        <th>Fecha Nac</th>
-        <th>Pais Origen</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let actor of actores">
-        <td scope="row">
-          <img [src]="actor.foto" width="70" class="img-thumbnail" alt="">
-        </td>
-        <td scope="row">{{ actor.nombre }}</td>
-        <td scope="row">{{ actor.apellido }}</td>
-        <td scope="row">{{ actor.sexo }}</td>
-        <td scope="row">{{ actor.fechaNacimiento }}</td>
-        <td scope="row"></td>
-      </tr>
-    </tbody>
-  </table>
+
+<div class="container actorTable">
+  <div class="row">
+    <app-actor-tabla #actorTabla [actores]="actores" (actorSelected)="onSelected($event)"></app-actor-tabla>
+<!--
+    <app-actor-detalle *ngIf="pelicula" [pelicula]="pelicula" (peliculaDeleted)="onDeleted($event)"></app-pelicula-detalle> -->
+
+    <!-- <app-actor-listado *ngIf="pelicula"></app-actor-listado> -->
+  </div>
+
 </div>

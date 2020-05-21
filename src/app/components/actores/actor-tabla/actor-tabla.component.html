@@ -1,0 +1,32 @@
+<button class="btn btn-primary btn-lg mb-4" routerLink="/actor/alta" role="button">Nuevo Actor</button>
+<input type="text" [(ngModel)]="searchTerm" class="search" placeholder="Buscar Actores..">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Foto</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">Fecha Nacimiento</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let actor of actores | filter: searchTerm:'nombre'">
+      <th scope="row">{{ actor.id }}</th>
+      <td scope="row">{{ actor.nombre }}</td>
+      <td scope="row">{{ actor.apellido }}</td>
+      <td scope="row">{{ actor.sexo }}</td>
+      <td scope="row">{{ actor.fechaNacimiento | date:'dd/MM/yyyy' }}</td>
+      <td scope="row">
+        <img width="50" [src]="actor.fotoPelicula" alt="">
+      </td>
+      <td scope="row">
+        <div class="btn-group dropup floating-action-button">
+          <button type="button" class="btn btn-info btn-sm btn-raised" (click)="onSelect(actor)">Detalle</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
