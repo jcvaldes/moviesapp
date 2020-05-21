@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';
-import { BusquedaComponent } from './components/paises/busqueda/busqueda.component';
 import { PeliculaAltaComponent } from './components/peliculas/pelicula-alta/pelicula-alta.component';
 import { PeliculaListadoComponent } from './components/peliculas/pelicula-listado/pelicula-listado.component';
 import { ActorAltaComponent } from './components/actores/actor-alta/actor-alta.component';
 import { ActorListadoComponent } from './components/actores/actor-listado/actor-listado.component';
 import { PaisListadoComponent } from './components/paises/pais-listado/pais-listado.component';
 import { PaisDetalleComponent } from './components/paises/pais-detalle/pais-detalle.component';
+import { BusquedaComponent } from './components/busqueda/busqueda.component';
 
 const routes: Routes = [
   { path: 'bienvenido', component: BienvenidaComponent },
