@@ -20,5 +20,6 @@ export class PeliculaListadoComponent implements OnInit {
   }
   onDelete(pelicula: Pelicula) {
     debugger
+
   }
 }

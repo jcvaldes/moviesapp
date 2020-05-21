@@ -9,6 +9,7 @@ import { ActorListadoComponent } from './components/actores/actor-listado/actor-
 import { PaisListadoComponent } from './components/paises/pais-listado/pais-listado.component';
 import { PaisDetalleComponent } from './components/paises/pais-detalle/pais-detalle.component';
 import { TablaPeliculaComponent } from './components/peliculas/tabla-pelicula/tabla-pelicula.component';
+import { TablaPaisesComponent } from './components/paises/tabla-paises/tabla-paises.component';
 
 
 const routes: Routes = [

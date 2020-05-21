@@ -1,24 +1,12 @@
 <div class="container paisTable">
-  <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">Subregion</th>
-      <th scope="col">Capital</th>
-      <th scope="col">Bandera</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let pais of paises">
-      <td scope="row">{{ pais.name }}</td>
-      <td scope="row">{{ pais.subregion }}</td>
-      <td scope="row">{{ pais.capital }}</td>
-      <td scope="row">
-        <a [routerLink]="['/paises', pais.name]" [queryParams]="{pais: pais}">
-          <img [src]="pais.flag" width="70" alt="">
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <div class="row">
+    <div class="col-9">
+      <app-tabla-paises [paises]="paises" (paisSelected)="onSelected($event)"></app-tabla-paises>
+    </div>
+    <div class="col-3">
+      <app-pais-detalle [pais]="pais" *ngIf="pais" (deactivated)="onDeactivated($event)" ></app-pais-detalle>
+    </div>
+  </div>
+
 </div>
+
