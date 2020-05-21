@@ -1,7 +1,6 @@
 <img [src]="pelicula.fotoPelicula" alt="foto pelicula" />
 <form>
-  <div class="row mt-3">
-    <div class="col-12">
+
       <div class="form-group">
         <label>Nombre</label>
         <span class="form-control">{{ pelicula.nombre }}</span>
@@ -19,6 +18,5 @@
         <span class="form-control">{{ pelicula.fechaEstreno }}</span>
       </div>
       <button class="btn btn-danger btn-lg mr-3" (click)="onDelete(pelicula)">Eliminar</button>
-    </div>
-  </div>
+
 </form>

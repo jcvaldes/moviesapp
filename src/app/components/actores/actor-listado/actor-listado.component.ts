@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { Actor } from '../actor.model';
 import { ActorService } from '../actor.service';
 import { ActorTablaComponent } from '../actor-tabla/actor-tabla.component';
@@ -10,11 +10,12 @@ import { ActorTablaComponent } from '../actor-tabla/actor-tabla.component';
 })
 export class ActorListadoComponent implements OnInit {
   actor: Actor;
-  actores: Actor[] = [];
+  @Input() actores: Actor[];
   @ViewChild(ActorTablaComponent, { static: true }) actorTabla: ActorTablaComponent;
 
   constructor(public _actorService: ActorService) {}
   onSelected(actor: Actor) {
+    debugger
     this.actor = actor;
   }
   onDeleted(actor: Actor) {
@@ -24,6 +25,6 @@ export class ActorListadoComponent implements OnInit {
     this.actor = null;
   }
   ngOnInit(): void {
-    this.actores = this._actorService.getActores();
+    this.actores = this.actorTabla.actores;
   }
 }

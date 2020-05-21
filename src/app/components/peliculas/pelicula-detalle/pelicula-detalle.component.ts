@@ -17,9 +17,9 @@ export class PeliculaDetalleComponent {
   constructor(
     public _peliculaService: PeliculaService) {}
 
-  onDelete(oelicula) {
-    this._peliculaService.deletePelicula(this.pelicula);
-    this.peliculaDeleted.emit(this.pelicula);
+  onDelete(pelicula) {
+    this._peliculaService.deletePelicula(pelicula);
+    this.peliculaDeleted.emit(pelicula);
     this.onClose();
   }
   onClose() {

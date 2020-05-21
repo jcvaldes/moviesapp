@@ -17,12 +17,13 @@ export class ActorDetalleComponent {
   constructor(
     public _actorService: ActorService) {}
 
-  onDelete(oelicula) {
-    this._actorService.deleteActor(this.actor);
-    this.actorDeleted.emit(this.actor);
+  onDelete(actor) {
+    this._actorService.deleteActor(actor);
+    this.actorDeleted.emit(actor);
     this.onClose();
   }
   onClose() {
+    this.actor = null;
     this.back.emit();
   }
 }

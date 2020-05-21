@@ -15,6 +15,7 @@ export class PeliculaTablaComponent implements OnInit {
   constructor(public _peliculaService: PeliculaService) {}
 
   onSelect(pelicula) {
+    debugger
     this.peliculaSelected.emit(pelicula);
   }
   ngOnInit(): void {

@@ -1,4 +1,5 @@
 import { TreeError } from '@angular/compiler';
+import { Actor } from '../actores/actor.model';
 
 export enum validTypes {
     TERROR,
@@ -13,6 +14,7 @@ export class Pelicula {
         public tipo: validTypes,
         public fechaEstreno: Date,
         public cantidadPublico: number,
-        public fotoPelicula: string
+        public fotoPelicula: string,
+        public actores?: Actor[]
     ){}
 }

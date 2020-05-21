@@ -6,12 +6,20 @@ const peliculasMock = [{
     cantidadPublico: 300000,
     fotoPelicula: "https://static.misionesonline.news/wp-content/uploads/2020/03/16084200/rapidos-y-furiosos-9-coronavirus.jpeg",
     actores: [{
-        id: 3,
+        id: 1,
         nombre: "Vin Disel",
         apellido: "Perez",
         sexo: "Masculino",
         fechaNacimiento: "04/06/2000",
         foto: "https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2020/03/12164026/Vin_Diesel_Countdown_Rep2.jpg"
+      },
+      {
+        id: 2,
+        nombre: "Paul",
+        apellido: "Walker",
+        sexo: "Masculino",
+        fechaNacimiento: "04/06/2000",
+        foto: "https://zolfm.com/admin/imagenes/paul_walker_1-1572955487.jpg"
       }
     ]
 }, {
