@@ -2,8 +2,8 @@
 <div class="container actorTable">
   <div class="row">
     <app-actor-tabla #actorTabla [actores]="actores" (actorSelected)="onSelected($event)"></app-actor-tabla>
-<!--
-    <app-actor-detalle *ngIf="pelicula" [pelicula]="pelicula" (peliculaDeleted)="onDeleted($event)"></app-pelicula-detalle> -->
+
+    <app-actor-detalle *ngIf="actor" [actor]="actor" (actorDeleted)="onDeleted($event)"></app-actor-detalle>
 
     <!-- <app-actor-listado *ngIf="pelicula"></app-actor-listado> -->
   </div>
