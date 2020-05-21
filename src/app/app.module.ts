@@ -18,11 +18,12 @@ import { PaisDetalleComponent } from './components/paises/pais-detalle/pais-deta
 import { ActorService } from './components/actores/actor.service';
 import { PeliculaTablaComponent } from './components/peliculas/pelicula-tabla/pelicula-tabla.component';
 import { PeliculaDetalleComponent } from './components/peliculas/pelicula-detalle/pelicula-detalle.component';
-import { FilterPipe } from './common/pipes/filter';
 import { PaisTablaComponent } from './components/paises/pais-tabla/pais-tabla.component';
 import { ActorTablaComponent } from './components/actores/actor-tabla/actor-tabla.component';
 import { ActorDetalleComponent } from './components/actores/actor-detalle/actor-detalle.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
+import { SalaCinesModule } from './components/cines/sala-cines.module';
+import { CommonModule } from './common/common.module';
 
 @NgModule({
   declarations: [
@@ -41,15 +42,16 @@ import { BusquedaComponent } from './components/busqueda/busqueda.component';
     ActorListadoComponent,
     PaisTablaComponent,
     PaisListadoComponent,
-    PaisDetalleComponent,
-    FilterPipe
+    PaisDetalleComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
+    SalaCinesModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
 
   providers: [PeliculaService, ActorService],
