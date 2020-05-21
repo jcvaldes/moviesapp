@@ -1,21 +1,22 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, SimpleChanges, OnChanges } from '@angular/core';
 import { Actor } from '../actor.model';
 import { ActorService } from '../actor.service';
 import { ActorTablaComponent } from '../actor-tabla/actor-tabla.component';
+import { Pelicula } from '../../peliculas/pelicula.model';
 
 @Component({
   selector: 'app-actor-listado',
   templateUrl: './actor-listado.component.html',
   styleUrls: ['./actor-listado.component.scss']
 })
-export class ActorListadoComponent implements OnInit {
+export class ActorListadoComponent implements OnInit, OnChanges {
   actor: Actor;
-  @Input() actores: Actor[];
+  actores: Actor[] = [];
+  @Input() pelicula: Pelicula[];
   @ViewChild(ActorTablaComponent, { static: true }) actorTabla: ActorTablaComponent;
 
-  constructor(public _actorService: ActorService) {}
+  constructor(public _actorService: ActorService) { }
   onSelected(actor: Actor) {
-    debugger
     this.actor = actor;
   }
   onDeleted(actor: Actor) {
@@ -25,6 +26,14 @@ export class ActorListadoComponent implements OnInit {
     this.actor = null;
   }
   ngOnInit(): void {
-    this.actores = this.actorTabla.actores;
+    if (this.actores && this.actores.length === 0) {
+      this.actores = this.actorTabla.actores;
+    }
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.pelicula && changes.pelicula.currentValue.actores) {
+      this.actor = undefined;
+      this.actores = changes.pelicula.currentValue.actores;
+    }
   }
 }

@@ -1,11 +1,10 @@
-
-<div class="container actorTable">
+<div class="container">
   <div class="row">
-    <app-actor-tabla #actorTabla [actores]="actores" (actorSelected)="onSelected($event)"></app-actor-tabla>
-
-    <app-actor-detalle *ngIf="actor" [actor]="actor" (actorDeleted)="onDeleted($event)"></app-actor-detalle>
-
-    <!-- <app-actor-listado *ngIf="pelicula"></app-actor-listado> -->
-  </div>
-
+    <div class="col-8">
+      <app-actor-tabla #actorTabla [actores]="actores" (actorSelected)="onSelected($event)">
+      </app-actor-tabla>
+    </div>
+    <div class="col-4">
+      <app-actor-detalle *ngIf="actor" [actor]="actor" (actorDeleted)="onDeleted($event)"></app-actor-detalle>
+    </div>
 </div>

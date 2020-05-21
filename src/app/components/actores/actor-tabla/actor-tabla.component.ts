@@ -8,21 +8,16 @@ import { ActorService } from '../actor.service';
   templateUrl: './actor-tabla.component.html',
   styleUrls: ['./actor-tabla.component.scss']
 })
-export class ActorTablaComponent implements OnInit, OnChanges {
+export class ActorTablaComponent implements OnInit {
   searchTerm: string;
   @Output() actorSelected: EventEmitter<Actor> = new EventEmitter<Actor>();
   @Input() actores: Actor[] = [];
-  constructor(public _actorService: ActorService) {}
+  constructor(public _actorService: ActorService) {
+    this.actores = JSON.parse(localStorage.getItem('actores')) || [];
+  }
   onSelect(actor) {
     this.actorSelected.emit(actor);
   }
-  ngOnInit(): void {
-    this.actores = JSON.parse(localStorage.getItem('actores')) || [];
-  }
-  ngOnChanges(changes: SimpleChanges) {
-    debugger
-    if (changes.actores && changes.actores.currentValue) {
-      this.actores = changes.actores.currentValue;
-    }
-  }
+  ngOnInit(): void {}
+
 }
