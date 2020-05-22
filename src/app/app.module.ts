@@ -22,8 +22,10 @@ import { PaisTablaComponent } from './components/paises/pais-tabla/pais-tabla.co
 import { ActorTablaComponent } from './components/actores/actor-tabla/actor-tabla.component';
 import { ActorDetalleComponent } from './components/actores/actor-detalle/actor-detalle.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
-import { SalaCinesModule } from './components/cines/sala-cines.module';
-import { CommonModule } from './common/common.module';
+import { CineListadoComponent } from './components/cines/cine-listado/cine-listado.component';
+import { CineTablaComponent } from './components/cines/cine-tabla/cine-tabla.component';
+import { FilterPipe } from './common/pipes/filter';
+import { CineService } from './components/cines/cine.service';
 
 @NgModule({
   declarations: [
@@ -42,19 +44,20 @@ import { CommonModule } from './common/common.module';
     ActorListadoComponent,
     PaisTablaComponent,
     PaisListadoComponent,
-    PaisDetalleComponent
+    PaisDetalleComponent,
+    CineTablaComponent,
+    CineListadoComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
-    CommonModule,
     AppRoutingModule,
-    SalaCinesModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
   ],
 
-  providers: [PeliculaService, ActorService],
+  providers: [PeliculaService, ActorService, CineService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

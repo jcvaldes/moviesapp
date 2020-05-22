@@ -8,10 +8,18 @@ import { ActorListadoComponent } from './components/actores/actor-listado/actor-
 import { PaisListadoComponent } from './components/paises/pais-listado/pais-listado.component';
 import { PaisDetalleComponent } from './components/paises/pais-detalle/pais-detalle.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
+import { CineListadoComponent } from './components/cines/cine-listado/cine-listado.component';
 
 const routes: Routes = [
   { path: 'bienvenido', component: BienvenidaComponent },
   { path: 'busqueda', component: BusquedaComponent },
+  {
+    path: 'cines',
+    children: [
+      { path: 'listado', component: CineListadoComponent },
+      // { path: ':id', component: PeliculaAltaComponent },
+    ]
+  },
   {
     path: 'peliculas',
     children: [

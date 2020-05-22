@@ -18,6 +18,7 @@ export class CineTablaComponent {
     this.cines = this._cineService.getCines();
   }
   onSelect(cine) {
+    debugger
     this.cineSelected.emit(cine);
   }
 

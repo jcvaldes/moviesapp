@@ -13,12 +13,12 @@ export class PeliculaTablaComponent implements OnInit {
   @Output() peliculaSelected: EventEmitter<Pelicula> = new EventEmitter<Pelicula>();
   @Input() peliculas: Pelicula[];
   constructor(public _peliculaService: PeliculaService) {}
-
   onSelect(pelicula) {
-    debugger
     this.peliculaSelected.emit(pelicula);
   }
   ngOnInit(): void {
-    this.peliculas = JSON.parse(localStorage.getItem('peliculas')) || [];
+    if (!this.peliculas) {
+      this.peliculas = JSON.parse(localStorage.getItem('peliculas')) || [];
+    }
   }
 }

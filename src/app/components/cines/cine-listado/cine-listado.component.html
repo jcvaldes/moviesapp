@@ -3,5 +3,6 @@
     <div class="col-8">
       <app-cine-tabla #cineTabla  (cineSelected)="onSelected($event)">
       </app-cine-tabla>
+      <app-pelicula-tabla *ngIf="peliculas" [peliculas]="peliculas" #peliculaTabla></app-pelicula-tabla>
     </div>
 </div>

@@ -12,12 +12,15 @@ import { Pelicula } from '../../peliculas/pelicula.model';
 export class CineListadoComponent implements OnInit, OnChanges {
   cine: Cine;
   cines: Cine[] = [];
+  peliculas: Pelicula[];
   @Input() pelicula: Pelicula[];
   @ViewChild(CineTablaComponent, { static: true }) cineTabla: CineTablaComponent;
 
   constructor(public _cineService: CineService) { }
   onSelected(cine: Cine) {
     this.cine = cine;
+    debugger
+    this.peliculas = cine.peliculas;
   }
   onDeleted(cine: Cine) {
     this.cines = this.cineTabla.cines.filter(i => {
@@ -31,9 +34,9 @@ export class CineListadoComponent implements OnInit, OnChanges {
     }
   }
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.pelicula && changes.pelicula.currentValue.cines) {
-      this.cine = undefined;
-      this.cines = changes.pelicula.currentValue.cines;
-    }
+    // if (changes.pelicula && changes.pelicula.currentValue.cines) {
+    //   this.cine = undefined;
+    //   this.cines = changes.cines.currentValue;
+    // }
   }
 }

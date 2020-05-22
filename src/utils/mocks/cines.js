@@ -5,10 +5,10 @@ const cinesMock = [{
     paisOrigen: "Argentina",
     peliculas: [{
       id: 1,
-      nombre: "Rapido y Furiosos",
+      nombre: "Rapido y Furiosos 10",
       tipo: "otros",
-      fechaEstreno: "2000-12-03",
-      cantidadPublico: 300000,
+      fechaEstreno: "2000-12-02",
+      cantidadPublico: 100000,
       fotoPelicula: "https://static.misionesonline.news/wp-content/uploads/2020/03/16084200/rapidos-y-furiosos-9-coronavirus.jpeg",
       actores: [{
           id: 1,
@@ -29,7 +29,7 @@ const cinesMock = [{
       ]
     }, {
       id: 2,
-      nombre: "DeadPool",
+      nombre: "DeadPool 2",
       tipo: "comedia",
       fechaEstreno: "2010-12-11",
       cantidadPublico: 560000,
@@ -50,7 +50,7 @@ const cinesMock = [{
     paisOrigen: "Argentina",
     peliculas: [{
       id: 1,
-      nombre: "Rapido y Furiosos",
+      nombre: "Rapido y Furiosos 10",
       tipo: "otros",
       fechaEstreno: "2000-12-03",
       cantidadPublico: 300000,
@@ -81,7 +81,7 @@ const cinesMock = [{
     paisOrigen: "Argentina",
     peliculas: [{
       id: 1,
-      nombre: "Rapido y Furiosos",
+      nombre: "Rapido y Furiosos 10",
       tipo: "otros",
       fechaEstreno: "2000-12-03",
       cantidadPublico: 300000,
@@ -112,7 +112,7 @@ const cinesMock = [{
     paisOrigen: "Argentina",
     peliculas: [{
       id: 1,
-      nombre: "Rapido y Furiosos",
+      nombre: "Rapido y Furiosos 10",
       tipo: "otros",
       fechaEstreno: "2000-12-03",
       cantidadPublico: 300000,
