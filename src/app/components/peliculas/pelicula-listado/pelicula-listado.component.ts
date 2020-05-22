@@ -11,7 +11,7 @@ import { Actor } from '../../actores/actor.model';
 })
 export class PeliculaListadoComponent {
   pelicula: Pelicula;
-  peliculas: Pelicula[];
+  @Input() peliculas: Pelicula[];
   actores: Actor[];
   @ViewChild(PeliculaTablaComponent, { static: true }) peliculaTabla: PeliculaTablaComponent;
   constructor() { }
