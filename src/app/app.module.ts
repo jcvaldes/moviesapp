@@ -22,10 +22,10 @@ import { PaisTablaComponent } from './components/paises/pais-tabla/pais-tabla.co
 import { ActorTablaComponent } from './components/actores/actor-tabla/actor-tabla.component';
 import { ActorDetalleComponent } from './components/actores/actor-detalle/actor-detalle.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
-import { SalaListadoComponent } from './components/saladecine/sala-listado/sala-listado.component';
-import { SalaTablaComponent } from './components/saladecine/sala-tabla/sala-tabla.component';
+import { SalaListadoComponent } from './components/salas/sala-listado/sala-listado.component';
+import { SalaTablaComponent } from './components/salas/sala-tabla/sala-tabla.component';
 import { FilterPipe } from './common/pipes/filter';
-import { SalaService } from './components/saladecine/sala.service';
+import { SalaService } from './components/salas/sala.service';
 
 @NgModule({
   declarations: [

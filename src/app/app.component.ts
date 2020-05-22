@@ -4,7 +4,7 @@ import { ActoresServiceMock } from '../utils/mocks/actores';
 import { SalasServiceMock } from '../utils/mocks/salas';
 import { Pelicula } from './components/peliculas/pelicula.model';
 import { Actor } from './components/actores/actor.model';
-import { Sala } from './components/saladecine/sala.model';
+import { Sala } from './components/salas/sala.model';
 
 @Component({
   selector: 'app-root',
