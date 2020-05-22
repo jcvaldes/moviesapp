@@ -22,10 +22,10 @@ import { PaisTablaComponent } from './components/paises/pais-tabla/pais-tabla.co
 import { ActorTablaComponent } from './components/actores/actor-tabla/actor-tabla.component';
 import { ActorDetalleComponent } from './components/actores/actor-detalle/actor-detalle.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
-import { CineListadoComponent } from './components/cines/cine-listado/cine-listado.component';
-import { CineTablaComponent } from './components/cines/cine-tabla/cine-tabla.component';
+import { SalaListadoComponent } from './components/saladecine/sala-listado/sala-listado.component';
+import { SalaTablaComponent } from './components/saladecine/sala-tabla/sala-tabla.component';
 import { FilterPipe } from './common/pipes/filter';
-import { CineService } from './components/cines/cine.service';
+import { SalaService } from './components/saladecine/sala.service';
 
 @NgModule({
   declarations: [
@@ -45,8 +45,8 @@ import { CineService } from './components/cines/cine.service';
     PaisTablaComponent,
     PaisListadoComponent,
     PaisDetalleComponent,
-    CineTablaComponent,
-    CineListadoComponent,
+    SalaTablaComponent,
+    SalaListadoComponent,
     FilterPipe
   ],
   imports: [
@@ -57,7 +57,7 @@ import { CineService } from './components/cines/cine.service';
     ReactiveFormsModule,
   ],
 
-  providers: [PeliculaService, ActorService, CineService],
+  providers: [PeliculaService, ActorService, SalaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

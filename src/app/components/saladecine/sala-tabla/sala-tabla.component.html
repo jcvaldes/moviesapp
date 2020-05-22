@@ -1,0 +1,22 @@
+<input type="text" [(ngModel)]="searchTerm" class="search" placeholder="Buscar Salas..">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Foto</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Pais Origen</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sala of salas | filter: searchTerm:'nombre'" (click)="onSelect(sala)">
+      <th scope="row">{{ sala.id }}</th>
+      <td scope="row">
+        <img width="150" [src]="sala.foto" alt="foto sala">
+      </td>
+      <td scope="row">{{ sala.nombre }}</td>
+      <td scope="row">{{ sala.paisOrigen }}</td>
+    </tr>
+  </tbody>
+</table>
