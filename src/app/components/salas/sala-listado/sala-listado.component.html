@@ -1,8 +1,0 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <app-sala-tabla #salaTabla  (salaSelected)="onSelected($event)">
-      </app-sala-tabla>
-      <app-pelicula-listado *ngIf="peliculas" [peliculas]="peliculas"></app-pelicula-listado>
-    </div>
-</div>

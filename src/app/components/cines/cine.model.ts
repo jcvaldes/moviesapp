@@ -1,5 +1,5 @@
 import { Pelicula } from '../peliculas/pelicula.model';
-export class Sala {
+export class Cine {
     constructor (
         public id: number,
         public nombre: string,

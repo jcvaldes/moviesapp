@@ -1,16 +1,16 @@
-import { SalaService } from '../sala.service';
+import { CineService } from '../cine.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
-import { Sala } from '../sala.model';
+import { Cine } from '../cine.model';
 @Component({
-  selector: 'app-sala-alta',
-  templateUrl: './sala-alta.component.html',
-  styleUrls: ['./sala-alta.component.scss']
+  selector: 'app-cine-alta',
+  templateUrl: './cine-alta.component.html',
+  styleUrls: ['./cine-alta.component.scss']
 })
-export class SalaAltaComponent implements OnInit {
+export class CineAltaComponent implements OnInit {
   form: FormGroup;
-  constructor(public _salaService: SalaService) {
+  constructor(public _cineService: CineService) {
     this.form = new FormGroup({
       nombre: new FormControl(null,  Validators.required),
       foto: new FormControl(null, Validators.required),
@@ -21,17 +21,17 @@ export class SalaAltaComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit() {
-    this._salaService.altaSala(this.createSala());
+    this._cineService.altaCine(this.createCine());
     this.form.reset();
-    Swal.fire('Atención', 'La sala ha sido guardada', 'success');
+    Swal.fire('Atención', 'El cine ha sido guardada', 'success');
   }
-  createSala(){
-    const sala: Sala = {
+  createCine(){
+    const cine: Cine = {
       id: 0,
       nombre: this.form.value.nombre,
       paisOrigen: this.form.value.paisOrigen,
       foto: this.form.value.foto
     };
-    return sala;
+    return cine;
   }
 }

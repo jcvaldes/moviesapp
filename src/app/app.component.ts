@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { PeliculasServiceMock } from '../utils/mocks/peliculas';
 import { ActoresServiceMock } from '../utils/mocks/actores';
-import { SalasServiceMock } from '../utils/mocks/salas';
+import { CinesServiceMock } from '../utils/mocks/cines';
 import { Pelicula } from './components/peliculas/pelicula.model';
 import { Actor } from './components/actores/actor.model';
-import { Sala } from './components/salas/sala.model';
+import { Cine } from './components/cines/cine.model';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ import { Sala } from './components/salas/sala.model';
 export class AppComponent {
   peliculas: Pelicula[] = [];
   actores: Actor[] = [];
-  salas: Sala[] = [];
+  cines: Cine[] = [];
   title = 'moviesapp';
   constructor() {
     this.initDb();
@@ -22,7 +22,7 @@ export class AppComponent {
   private initDb() {
     this.retrivePeliculas();
     this.retriveActores();
-    this.retriveSalas();
+    this.retriveCines();
   }
 
   private retrivePeliculas() {
@@ -45,13 +45,13 @@ export class AppComponent {
       });
     }
   }
-  private retriveSalas() {
-    const salasMock = new SalasServiceMock();
-    let salas = JSON.parse(localStorage.getItem('salas')) || [];
-    if (salas.length === 0) {
-      salasMock.getSalas().then(data => {
-        this.salas = data;
-        localStorage.setItem('salas', JSON.stringify(this.salas));
+  private retriveCines() {
+    const cinesMock = new CinesServiceMock();
+    let cines = JSON.parse(localStorage.getItem('cines')) || [];
+    if (cines.length === 0) {
+      cinesMock.getCines().then(data => {
+        this.cines = data;
+        localStorage.setItem('cines', JSON.stringify(this.cines));
       });
     }
   }

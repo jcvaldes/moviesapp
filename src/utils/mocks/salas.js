@@ -1,6 +1,6 @@
-const salasMock = [{
+const cinesMock = [{
     id: 1,
-    nombre: "Sala1",
+    nombre: "Cine Atlas Lavalle",
     foto: "https://filer.365.clarin.com/filer/materiales-salesforce/prod/201701/06/201701-06-1f1f0827-4a40-483e-83f4-d4c4bd358d03.jpg",
     paisOrigen: "Argentina",
     peliculas: [{
@@ -45,7 +45,7 @@ const salasMock = [{
     }]
   }, {
     id: 2,
-    nombre: "Sala2",
+    nombre: "Village Cines Avellaneda",
     foto: "https://lh3.googleusercontent.com/proxy/LLtzCQNCWlrku_dGojYwfv_TMEQ72swn3EhTUoH4YNqExygyeNE7M1TrNv0sWVEUzRPXnkNxOfD-Yke8xqKowLbyrn8M63K9WK3EK0H2SvhCNu_Cqw",
     paisOrigen: "Argentina",
     peliculas: [{
@@ -76,7 +76,7 @@ const salasMock = [{
   },
   {
     id: 3,
-    nombre: "Sala 3",
+    nombre: "Village Cines Puerto Madero",
     foto: "https://lh3.googleusercontent.com/proxy/LLtzCQNCWlrku_dGojYwfv_TMEQ72swn3EhTUoH4YNqExygyeNE7M1TrNv0sWVEUzRPXnkNxOfD-Yke8xqKowLbyrn8M63K9WK3EK0H2SvhCNu_Cqw",
     paisOrigen: "Argentina",
     peliculas: [{
@@ -107,7 +107,7 @@ const salasMock = [{
   },
   {
     id: 4,
-    nombre: "Sala 4",
+    nombre: "Village Cines Recoleta",
     foto: "https://lh3.googleusercontent.com/proxy/LLtzCQNCWlrku_dGojYwfv_TMEQ72swn3EhTUoH4YNqExygyeNE7M1TrNv0sWVEUzRPXnkNxOfD-Yke8xqKowLbyrn8M63K9WK3EK0H2SvhCNu_Cqw",
     paisOrigen: "Argentina",
     peliculas: [{
@@ -138,7 +138,7 @@ const salasMock = [{
   },
   {
     id: 5,
-    nombre: "Sala 5",
+    nombre: "Monumental Lavalle",
     foto: "https://media-cdn.tripadvisor.com/media/photo-m/1280/17/1b/d1/2c/cine-multiplex-lavalle.jpg",
     paisOrigen: "Argentina",
     peliculas: [{
@@ -169,8 +169,8 @@ const salasMock = [{
   },
 ]
 
-export class SalasServiceMock {
-  async getSalas() {
-    return Promise.resolve(salasMock);
+export class CinesServiceMock {
+  async getCines() {
+    return Promise.resolve(cinesMock);
   }
 }
