@@ -3,14 +3,21 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Pelicula } from '../pelicula.model';
+import { ActivatedRoute } from '@angular/router';
+import { CineService } from '../../cines/cine.service';
+import { Cine } from '../../cines/cine.model';
 @Component({
   selector: 'app-pelicula-alta',
   templateUrl: './pelicula-alta.component.html',
   styleUrls: ['./pelicula-alta.component.scss']
 })
 export class PeliculaAltaComponent implements OnInit {
+  cine: Cine;
   form: FormGroup;
-  constructor(public _peliculaService: PeliculaService) {
+  constructor(
+    private route: ActivatedRoute,
+    public _cineService: CineService,
+    public _peliculaService: PeliculaService) {
     this.form = new FormGroup({
       nombre: new FormControl(null,  Validators.required),
       tipo: new FormControl(null, Validators.required),
@@ -18,12 +25,23 @@ export class PeliculaAltaComponent implements OnInit {
       cantidadPublico: new FormControl(null, Validators.required),
       fotoPelicula: new FormControl(null, Validators.required),
     });
+    this.route.queryParams.subscribe(data  => {
+      this.cine = this._cineService.getCine(+data.cineId);
+      this.cine.peliculas = [];
+    });
   }
 
   ngOnInit(): void {
   }
   onSubmit() {
-    this._peliculaService.altaPelicula(this.createPelicula());
+    debugger
+    if ( this.cine ) {
+      const pelicula = this.createPelicula();
+      this.cine.peliculas.push(pelicula);
+      this._cineService.updateCine(this.cine);
+    } else {
+      this._peliculaService.altaPelicula(this.createPelicula());
+    }
     this.form.reset();
     Swal.fire('Atención', 'La película ha sido guardada', 'success');
   }

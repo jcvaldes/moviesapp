@@ -9,11 +9,14 @@ import { Pelicula } from '../../peliculas/pelicula.model';
   templateUrl: './cine-listado.component.html',
   styleUrls: ['./cine-listado.component.scss']
 })
+// Padre de CineTablaComponent y PeliculaListadoComponent
 export class CineListadoComponent implements OnInit, OnChanges {
-  cine: Cine;
+  @Input() cine: Cine;
   cines: Cine[] = [];
   peliculas: Pelicula[];
   @Input() pelicula: Pelicula[];
+  // Obtengo referencia a el componente hijo para poder usar los métodos del mismo
+  // desde el componente padre.
   @ViewChild(CineTablaComponent, { static: true }) cineTabla: CineTablaComponent;
 
   constructor(public _cineService: CineService) { }
@@ -29,15 +32,13 @@ export class CineListadoComponent implements OnInit, OnChanges {
     this.cine = null;
   }
   ngOnInit(): void {
-    debugger
     if (this.cine && this.cines.length === 0) {
       this.cines = this.cineTabla.cines;
     }
   }
   ngOnChanges(changes: SimpleChanges) {
-    // if (changes.pelicula && changes.pelicula.currentValue.CineCines) {
-    //   this.cine = undefined;
-    //   this.CineCines = changes.CineCines.currentValue;
-    // }
+    if (changes.cine && changes.cine.currentValue) {
+      this.cineTabla.ngOnInit();
+    }
   }
 }
