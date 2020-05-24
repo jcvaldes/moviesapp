@@ -9,7 +9,10 @@ export class FilterPipe implements PipeTransform {
       return value;
     }
     return value.filter(item => {
-      return item[fieldsFilter[0]].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 || item[fieldsFilter[1]].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+      return fieldsFilter.length === 1
+                ? item[fieldsFilter[0]].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+                // tslint:disable-next-line: max-line-length
+                : item[fieldsFilter[0]].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1  || item[fieldsFilter[1]].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
     });
   }
 }
