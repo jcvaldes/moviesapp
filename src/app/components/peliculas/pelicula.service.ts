@@ -7,7 +7,6 @@ export class PeliculaService {
   constructor(public http: HttpClient) {
   }
   getPeliculas() {
-    debugger
     return JSON.parse(localStorage.getItem('peliculas')) || [];
   }
 

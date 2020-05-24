@@ -34,7 +34,6 @@ export class PeliculaAltaComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit() {
-    debugger
     if ( this.cine ) {
       const pelicula = this.createPelicula();
       this.cine.peliculas.push(pelicula);
