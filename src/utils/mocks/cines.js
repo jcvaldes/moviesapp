@@ -46,7 +46,7 @@ const cinesMock = [{
   }, {
     id: 2,
     nombre: "Village Cines Avellaneda",
-    foto: "https://lh3.googleusercontent.com/proxy/LLtzCQNCWlrku_dGojYwfv_TMEQ72swn3EhTUoH4YNqExygyeNE7M1TrNv0sWVEUzRPXnkNxOfD-Yke8xqKowLbyrn8M63K9WK3EK0H2SvhCNu_Cqw",
+    foto: "https://www.elcomercio.com/files/article_main/uploads/2020/04/07/5e8ccce014854.jpeg",
     paisOrigen: "Argentina",
     peliculas: [{
       id: 1,
@@ -77,7 +77,7 @@ const cinesMock = [{
   {
     id: 3,
     nombre: "Village Cines Recoleta",
-    foto: "https://lh3.googleusercontent.com/proxy/LLtzCQNCWlrku_dGojYwfv_TMEQ72swn3EhTUoH4YNqExygyeNE7M1TrNv0sWVEUzRPXnkNxOfD-Yke8xqKowLbyrn8M63K9WK3EK0H2SvhCNu_Cqw",
+    foto: "https://www.tododisca.com/wp-content/uploads/2019/01/sala-de-cine-1000x600.jpg",
     paisOrigen: "Argentina",
     peliculas: [{
       id: 1,
@@ -108,7 +108,7 @@ const cinesMock = [{
   {
     id: 4,
     nombre: "Village Cines Martinez",
-    foto: "https://lh3.googleusercontent.com/proxy/LLtzCQNCWlrku_dGojYwfv_TMEQ72swn3EhTUoH4YNqExygyeNE7M1TrNv0sWVEUzRPXnkNxOfD-Yke8xqKowLbyrn8M63K9WK3EK0H2SvhCNu_Cqw",
+    foto: "https://www.lavanguardia.com/r/GODO/LV/p7/WebSite/2020/03/13/Recortada/img_fmartinez_20200312-195239_imagenes_lv_getty_gettyimages-143923007-kPYB-X5DBUGEGVA3YHWGI-992x558@LaVanguardia-Web.jpg",
     paisOrigen: "Argentina",
     peliculas: [{
       id: 1,
